@@ -2,6 +2,12 @@
 
 Model Context Protocol server that exposes Sytadel identity + access primitives as tools consumable from Claude Desktop, Cursor, and any MCP-aware client.
 
+## What it is
+
+**On its own:** a standalone MCP server you point at any running Sytadel control plane (`auth-api` + `zerotrust-api`). It turns identity/access operations into typed tools an LLM client can call — the tenant is always derived from the authenticated principal, never from a model-supplied argument.
+
+**As part of Sytadel:** it is the agentic surface of the suite. It talks to `auth-api` (identity) through `zerotrust-api` (policy gateway), so every tool call is subject to the same per-tenant authorization as any other client. It is a *client* of the plane — it needs `auth-api` reachable to do anything. See the [suite architecture](../README.md).
+
 Ships 5 tools out of the box:
 
 | Tool | Description |
@@ -104,4 +110,4 @@ The server logs `starting stdio server: ... connected — awaiting MCP client` a
 
 ## License
 
-MIT
+Apache-2.0. See [LICENSE](./LICENSE).
