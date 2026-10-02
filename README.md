@@ -110,4 +110,4 @@ The server logs `starting stdio server: ... connected — awaiting MCP client` a
 
 ## License
 
-Apache-2.0. See [LICENSE](./LICENSE).
+PolyForm Strict 1.0.0 (source-available, noncommercial use only). See [LICENSE](./LICENSE).
